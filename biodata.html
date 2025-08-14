@@ -1,113 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>m.raihan - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biodata — Header & Footer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #161b22;
-      color: #f0f0f0;
-      text-align: center;
+    :root{
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --accent:#ff7aa2; /* pastel pink */
+      --muted:#6b7280;
+      --radius:14px;
+      --container-w:900px;
     }
-    header {
-      padding: 40px 20px 20px;
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; background:var(--bg); color:#111}
+
+    .wrap{
+      max-width:var(--container-w);
+      margin:40px auto;
+      padding:28px;
     }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #2f3338;
+
+    /* Card */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,1));
+      border-radius:var(--radius);
+      box-shadow:0 8px 30px rgba(17,24,39,0.08);
+      overflow:hidden;
+      border:1px solid rgba(17,24,39,0.04);
     }
-    header h1 {
-      margin: 15px 0 5px;
+
+    /* Header */
+    header.header{
+      display:flex;align-items:center;gap:16px;padding:20px 24px;background:linear-gradient(90deg,var(--accent), #ffdede);
+      color:white;
     }
-    header p {
-      margin: 5px 0 15px;
-      color: #c8c8c8;
+    .brand{
+      display:flex;flex-direction:column;line-height:1;
     }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #c8c8c8;
+    .brand h1{margin:0;font-size:20px;letter-spacing:0.6px;font-weight:700}
+    .brand p{margin:2px 0 0;font-size:13px;opacity:0.95}
+
+    /* Main content */
+    .content{
+      display:flex;gap:24px;padding:28px;
+      align-items:flex-start;
     }
-    nav a:hover {
-      color: #fff;
+    .avatar{
+      width:160px;min-width:160px;height:160px;border-radius:12px;background:linear-gradient(180deg,#ffe8ef,#ffdfe6);display:flex;align-items:center;justify-content:center;font-weight:600;color:rgba(0,0,0,0.6);font-size:18px
     }
-    section {
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
-      padding: 20px;
+
+    .info{
+      flex:1;
     }
-    section h2 {
-      margin-top: 40px;
+    .info h2{margin:0 0 6px;font-size:22px}
+    .meta{color:var(--muted);margin-bottom:14px}
+
+    dl{display:grid;grid-template-columns:160px 1fr;gap:10px 18px;margin:0}
+    dt{color:var(--muted);font-weight:600}
+    dd{margin:0}
+
+    .badges{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    .badge{background:#fff;padding:6px 10px;border-radius:999px;border:1px solid rgba(17,24,39,0.06);font-weight:600;font-size:13px}
+
+    /* Footer */
+    footer.footer{
+      display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:linear-gradient(180deg, #fff,#f9fafb);border-top:1px solid rgba(17,24,39,0.04);
     }
-    .tag {
-      display: inline-block;
-      background: #21262d;
-      padding: 5px 10px;
-      border-radius: 8px;
-      margin: 5px 5px 0 0;
-      font-size: 14px;
+    .sig{font-size:13px;color:var(--muted)}
+    .thanks{font-weight:700;color:var(--accent)}
+
+    /* Utility: print styles */
+    @media print{
+      body{background:white}
+      .wrap{margin:0;padding:0}
+      .card{box-shadow:none;border-radius:0}
+      header.header{background:transparent;color:black}
+      .avatar{background:#eaeaea}
     }
-    footer {
-      margin-top: 50px;
-      padding: 20px;
-      font-size: 14px;
-      border-top: 1px solid #2f3338;
-      color: #c8c8c8;
-    }
-    a {
-      color: #00e0ff;
+
+    /* Responsive */
+    @media (max-width:720px){
+      .content{flex-direction:column}
+      .avatar{width:120px;height:120px;min-width:unset}
+      dl{grid-template-columns:120px 1fr}
     }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <div class="card" role="region" aria-label="Biodata">
 
-  <header>
-    <img src="pp.jpg" alt="Foto Profil">
-    <h1>Atallah Dhia Sahar</h1>
-    <p>Software Engineer • Full-stack • Game Dev</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+      <!-- HEADER -->
+      <header class="header">
+        <div style="width:56px;height:56px;border-radius:10px;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;font-weight:800;">BD</div>
+        <div class="brand">
+          <h1>Biodata Diri</h1>
+          <p>Profil singkat
 
-  <section id="about">
-    <h2>Tentang Saya</h2>
-    <p>Halo! Saya seorang Software Engineer yang fokus pada pengembangan aplikasi web dan game.</p>
-  </section>
+          </p>
+        </div>
+      </header>
 
-  <section id="projects">
-    <h2>Proyek Unggulan</h2>
-    <span class="tag">Peak Parkour — Game Parkour (Roblox)</span>
-    <span class="tag">Ambaneering — on progress</span>
-  </section>
+      <!-- MAIN CONTENT -->
+    <section class="content">
+    <div class="avatar">
+    <img src="foto2.jpg" alt="Foto Profil" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+    </div>
 
-  <section id="skills">
-    <h2>Keterampilan</h2>
-    <span class="tag">CTRL A</span>
-    <span class="tag">CTRL C</span>
-    <span class="tag">CTRL V</span>
-  </section>
 
-  <section id="contact">
-    <h2>Kontak</h2>
-    <p>Email: <a href="mailto:email@anda.com">iniemailsaya@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
-    <p>Telepon: +62 812-3456-7890</p>
-  </section>
+        <div class="info">
+          <h2>Atallah Dhia Sahar</h2>
+          <div class="meta">[18-03-2008] • [Pria] • [XIRPL1]</div>
 
-  <footer>
-    © 2025 Atallah Dhia Sahar — Dibuat dengan ❤️
-  </footer>
+          <dl>
+            <dt>Nama Panggilan</dt><dd>Ata</dd>
+            <dt>Alamat</dt><dd>Jawa timur, jember, Sumberbaru</dd>
+            <dt>No. HP</dt><dd>+62 812-3456-7890</dd>
+            <dt>Email</dt><dd>novelai9872@gmail.com</dd>
+            <dt>Hobi</dt><dd>Berolahraga, membaca.</dd>
+            <dt>Cita-cita</dt><dd>Hidup dengan tenang di Jepang</dd>
+          </dl>
 
+    
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="sig">Dibuat: 14 Agustus 2025</div>
+        <div class="thanks">~ Terima Kasih ~</div>
+      </footer>
+
+    </div>
+  </div>
 </body>
 </html>
